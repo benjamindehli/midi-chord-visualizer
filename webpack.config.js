@@ -1,14 +1,25 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./src/main.js",
     output: {
         filename: "main.js",
-        path: path.resolve(__dirname, "docs")
+        path: path.resolve(__dirname, "docs"),
+        clean: true // Clears /docs before each build
     },
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "main.css"
+        }),
+        new HtmlWebpackPlugin({
+            template: "./public/index.html", // use your HTML as a base
+            filename: "index.html", // output file in /docs
+            inject: "body" // inject scripts before </body>
+        })
+    ],
     module: {
         rules: [
             {

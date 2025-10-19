@@ -1,3 +1,4 @@
+import "./main.css";
 import { getChordsFromSelectedNotes, getRelativeNoteNumber } from "./helpers/noteHelpers.js";
 
 // Check if Web MIDI API is supported
