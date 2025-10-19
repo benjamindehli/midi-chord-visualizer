@@ -7,3 +7,61 @@ body {
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.matched-chords-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    text-align: center;
+    & li {
+        &:first-child {
+            display: block;
+            width: 100%;
+            margin-bottom: 18px;
+            & span {
+                font-size: 3em;
+                font-weight: 700;
+                color: #eee;
+            }
+        }
+        &:not(:first-child) {
+            display: inline-block;
+            margin-bottom: 12px;
+            & span {
+                font-size: 1.3em;
+                font-weight: 500;
+                padding: 6px 10px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid #444;
+                color: #ddd;
+            }
+        }
+    }
+}
