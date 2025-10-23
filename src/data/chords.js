@@ -39,6 +39,7 @@ const chords = {
   "m7(#5)":         {"halfSteps": [0, 3, 8, 10],             "parsedHalfSteps": [0, 3, 8, 10]},
   "m(maj7)(#5)":    {"halfSteps": [0, 3, 8, 11],             "parsedHalfSteps": [0, 3, 8, 11]},
   "m7(no5)":        {"halfSteps": [0, 3, 10],                "parsedHalfSteps": [0, 3, 10]},
+  "m9(no5)":        {"halfSteps": [0, 3, 10, 14],            "parsedHalfSteps": [0, 2, 3, 10]},
   "m(maj9)(no5)":   {"halfSteps": [0, 3, 11, 14],            "parsedHalfSteps": [0, 2, 3, 11]},
   "m(add9)(no5)":   {"halfSteps": [0, 3, 14],                "parsedHalfSteps": [0, 2, 3]},
   "3":              {"halfSteps": [0, 4],                    "parsedHalfSteps": [0, 4]},
