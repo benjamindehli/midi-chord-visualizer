@@ -5,6 +5,13 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"@benjamindehli/midi-notes-to-chords@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@benjamindehli/midi-notes-to-chords@npm:1.0.4"
+  checksum: 10c0/7741821373db32777f035a83ed03815672e6144497ae285d7ee7c2f78a248e941dd64cba3ee055348687297a8c52b8c0a5c890a22561683a52dd439e7e208d6e
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.6.1":
   version: 0.6.3
   resolution: "@discoveryjs/json-ext@npm:0.6.3"
@@ -2773,6 +2780,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "midi-chord-visualizer@workspace:."
   dependencies:
+    "@benjamindehli/midi-notes-to-chords": "npm:^1.0.4"
     css-loader: "npm:^7.1.2"
     css-minimizer-webpack-plugin: "npm:^7.0.2"
     html-webpack-plugin: "npm:^5.6.4"

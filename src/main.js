@@ -1,3 +1,4 @@
+import { getChordsFromSelectedNotes } from "@benjamindehli/midi-notes-to-chords";
 import "./main.css";
 import { getChordsFromSelectedNotes, getRelativeNoteNumber } from "./helpers/noteHelpers.js";
 import { generateKeyboardLayout, updateKeyboardDisplay } from "./helpers/keyboardHelpers.js";
