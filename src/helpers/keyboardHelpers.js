@@ -45,8 +45,12 @@ function setActiveKey(noteNumber, isActive) {
 export function updateKeyboardDisplay(activeNotes) {
     // First, clear all active states
     const allKeys = document.querySelectorAll(".key");
-    allKeys.forEach((key) => key.classList.remove("active"));
+    for (const key of allKeys) {
+        key.classList.remove("active");
+    }
 
     // Then, set the active state for the currently active notes
-    activeNotes.forEach((note) => setActiveKey(note, true));
+    for (const note of activeNotes) {
+        setActiveKey(note, true);
+    }
 }
