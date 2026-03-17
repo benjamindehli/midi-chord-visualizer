@@ -1,14 +1,19 @@
-import { getChordsFromSelectedNotes } from "@benjamindehli/midi-notes-to-chords";
-import "./main.css";
-import { getChordsFromSelectedNotes, getRelativeNoteNumber } from "./helpers/noteHelpers.js";
+// Dependencies
+import { getChordsFromSelectedNotes, Midi } from "@benjamindehli/music-utils";
+
+// Classes
+
+// Helpers
 import { generateKeyboardLayout, updateKeyboardDisplay } from "./helpers/keyboardHelpers.js";
 
 // Check if Web MIDI API is supported
 if (navigator.requestMIDIAccess) {
-    navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
-} else {
-    console.error("Web MIDI API is not supported in this browser.");
-}
+
+// Stylesheets
+import "./main.css";
+
+const midi = new Midi();
+midi.init(handleMIDIMessage);
 
 const activeNotes = new Set();
 
@@ -16,9 +21,6 @@ function onMIDISuccess(midiAccess) {
     console.log("MIDI ready!");
 
     // Loop through all available MIDI inputs
-    for (const input of midiAccess.inputs.values()) {
-        console.log(`Connected to: ${input.name}`);
-        input.onmidimessage = handleMIDIMessage;
     }
 
     // Listen for new devices being connected
@@ -47,23 +49,23 @@ function handleMIDIMessage(message) {
 }
 
 function updateActiveNotesDisplay() {
-    activeNotes.forEach((note) => {
+    for (const note of activeNotes) {
         const listItem = document.createElement("li");
         listItem.textContent = `Note: ${note}`;
-    });
+    }
 
     const matchedChords = getChordsFromSelectedNotes(Array.from(activeNotes));
 
     const matchedChordsListElement = document.getElementById("matched-chords-list");
     if (matchedChordsListElement) {
         matchedChordsListElement.innerHTML = "";
-        matchedChords.forEach(({ root, chord }) => {
+        for (const { root, chord } of matchedChords) {
             const listItem = document.createElement("li");
             const listItemContent = document.createElement("span");
-            listItemContent.textContent = `${root} ${chord}`;
+            listItemContent.textContent = `${root} ${chord?.name}`;
             listItem.appendChild(listItemContent);
             matchedChordsListElement.appendChild(listItem);
-        });
+        }
     }
 }
 
