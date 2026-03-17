@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("keydown", (event) => {
+    if (event.repeat) return;
     toggleNote(event.key);
 });
 
