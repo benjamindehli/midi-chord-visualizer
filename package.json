@@ -12,14 +12,14 @@
         "start": "webpack serve --mode development"
     },
     "devDependencies": {
-        "css-loader": "^7.1.2",
-        "css-minimizer-webpack-plugin": "^7.0.2",
-        "html-webpack-plugin": "^5.6.4",
-        "mini-css-extract-plugin": "^2.9.4",
+        "css-loader": "^7.1.4",
+        "css-minimizer-webpack-plugin": "^8.0.0",
+        "html-webpack-plugin": "^5.6.6",
+        "mini-css-extract-plugin": "^2.10.2",
         "style-loader": "^4.0.0",
-        "webpack": "^5.102.1",
-        "webpack-cli": "^6.0.1",
-        "webpack-dev-server": "^5.2.2"
+        "webpack": "^5.105.4",
+        "webpack-cli": "^7.0.2",
+        "webpack-dev-server": "^5.2.3"
     },
     "dependencies": {
         "@benjamindehli/music-utils": "^3.2.0"
