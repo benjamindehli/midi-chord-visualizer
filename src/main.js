@@ -1,14 +1,8 @@
 // Dependencies
 import { getChordsFromSelectedNotes, Midi } from "@benjamindehli/music-utils";
 
-// Classes
-import Game from "./classes/Game.js";
-
 // Helpers
 import { generateKeyboardLayout, updateKeyboardDisplay } from "./helpers/keyboardHelpers.js";
-
-// Data
-import { levels } from "./data/levels.js";
 
 // Stylesheets
 import "./main.css";
