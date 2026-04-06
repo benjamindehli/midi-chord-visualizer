@@ -62,32 +62,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("keydown", (event) => {
     if (event.repeat) return;
-    toggleNote(event.key);
+    toggleNote(event.code);
 });
 
 document.addEventListener("keyup", (event) => {
-    toggleNote(event.key);
+    toggleNote(event.code);
 });
 
 const keyToNoteNumberMap = {
     // Map keyboard keys to MIDI note numbers (C4 = 60)
-    a: 60, // C4
-    w: 61, // C#4
-    s: 62, // D4
-    e: 63, // D#4
-    d: 64, // E4
-    f: 65, // F4
-    t: 66, // F#4
-    g: 67, // G4
-    y: 68, // G#4
-    h: 69, // A4
-    u: 70, // A#4
-    j: 71, // B4
-    k: 72 // C5
+    KeyA: 60, // C4
+    KeyW: 61, // C#4
+    KeyS: 62, // D4
+    KeyE: 63, // D#4
+    KeyD: 64, // E4
+    KeyF: 65, // F4
+    KeyT: 66, // F#4
+    KeyG: 67, // G4
+    KeyY: 68, // G#4
+    KeyH: 69, // A4
+    KeyU: 70, // A#4
+    KeyJ: 71, // B4
+    KeyK: 72, // C5
+    KeyO: 73, // C#5
+    KeyL: 74, // D5
+    KeyP: 75, // D#5
+    Semicolon: 76, // E5
+    Quote: 77 // F5
 };
 
-function toggleNote(key) {
-    const noteNumber = keyToNoteNumberMap[key];
+function toggleNote(code) {
+    const noteNumber = keyToNoteNumberMap[code];
     if (noteNumber) {
         if (activeNotes.has(noteNumber)) {
             activeNotes.delete(noteNumber);
