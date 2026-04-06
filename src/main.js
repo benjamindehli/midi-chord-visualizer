@@ -17,38 +17,6 @@ const midi = new Midi();
 midi.init(handleMIDIMessage);
 
 const activeNotes = new Set();
-let activeGame = null;
-let activeRoundIndex = 0;
-let activeRound = null;
-
-function commitChordGuess(activeNotes) {
-    if (!activeGame) {
-        console.warn("No active game.");
-        return;
-    }
-
-    const matchedChords = getChordsFromSelectedNotes(Array.from(activeNotes));
-    if (matchedChords.length === 0) {
-        console.log("No chord matched.");
-        return;
-    }
-
-    // If any of the matched chords correspond to the active round, consider it a correct guess
-    for (const { root, chord } of matchedChords) {
-        const guessedChordName = `${root} ${chord}`;
-        if (guessedChordName === activeGame.getActiveRound().chord.name) {
-            console.log(`Correct! You guessed the chord: ${guessedChordName}`);
-            // Here you could add logic to proceed to the next round, update score, etc.
-        }
-    }
-    activeGame.advanceToNextRound();
-    if (activeGame.activeRoundIndex >= activeGame.rounds.length) {
-        console.log("Game over! You've completed all rounds.");
-        return;
-    }
-    activeRound = activeGame.rounds[activeGame.activeRoundIndex];
-    console.log(activeGame);
-}
 
 function handleMIDIMessage(message) {
     const [command, noteNumber, velocity] = message.data;
@@ -58,16 +26,6 @@ function handleMIDIMessage(message) {
         activeNotes.add(noteNumber);
         updateActiveNotesDisplay();
         updateKeyboardDisplay(Array.from(activeNotes));
-        // If active notes is present and hasn't changed for more than .5 second, console.log the active notes
-        if (activeNotes.size > 0) {
-            clearTimeout(globalThis.activeNotesTimeout);
-            globalThis.activeNotesTimeout = setTimeout(() => {
-                if (activeNotes.size > 0) {
-                    console.log("Active notes (held for .5 second):", Array.from(activeNotes));
-                    commitChordGuess(activeNotes);
-                }
-            }, 500);
-        }
     } else if (command === 128 || (command === 144 && velocity === 0)) {
         activeNotes.delete(noteNumber);
         updateActiveNotesDisplay();
@@ -100,10 +58,6 @@ function updateActiveNotesDisplay() {
 document.addEventListener("DOMContentLoaded", () => {
     // Generate a 2-octave keyboard layout on page load
     generateKeyboardLayout(8);
-
-    activeGame = new Game(levels[1]);
-    //activeRound = activeGame.rounds[0];
-    console.log(activeGame);
 });
 
 document.addEventListener("keydown", (event) => {
