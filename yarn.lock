@@ -5,10 +5,10 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@benjamindehli/music-utils@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@benjamindehli/music-utils@npm:2.1.1"
-  checksum: 10c0/c2a11d168f339a9f9ed264664d0c44066698fbda94cd6d5fb961fd645a4c08ded45678884098c52305b312553c86064342569e5f7de4d70a5fc6d71a8d65a8bc
+"@benjamindehli/music-utils@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@benjamindehli/music-utils@npm:3.2.0"
+  checksum: 10c0/3128c0cb94f9c5325f1d18a97906d3dcb7df36eb97458e72e6fd31493bd9ad7b8030d468c7ab5c2df584e7308e6d4ee7cdb74a882c2af0ca4c7ba0ecc7a26304
   languageName: node
   linkType: hard
 
@@ -3046,15 +3046,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "midi-chord-visualizer@workspace:."
   dependencies:
-    "@benjamindehli/music-utils": "npm:^2.1.1"
-    css-loader: "npm:^7.1.2"
-    css-minimizer-webpack-plugin: "npm:^7.0.2"
-    html-webpack-plugin: "npm:^5.6.4"
-    mini-css-extract-plugin: "npm:^2.9.4"
+    "@benjamindehli/music-utils": "npm:^3.2.0"
+    css-loader: "npm:^7.1.4"
+    css-minimizer-webpack-plugin: "npm:^7.0.4"
+    html-webpack-plugin: "npm:^5.6.6"
+    mini-css-extract-plugin: "npm:^2.10.2"
     style-loader: "npm:^4.0.0"
-    webpack: "npm:^5.102.1"
+    webpack: "npm:^5.105.4"
     webpack-cli: "npm:^6.0.1"
-    webpack-dev-server: "npm:^5.2.2"
+    webpack-dev-server: "npm:^5.2.3"
   languageName: unknown
   linkType: soft
 

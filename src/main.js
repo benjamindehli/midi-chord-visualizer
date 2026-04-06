@@ -44,10 +44,10 @@ function updateActiveNotesDisplay() {
     const matchedChordsListElement = document.getElementById("matched-chords-list");
     if (matchedChordsListElement) {
         matchedChordsListElement.innerHTML = "";
-        for (const { root, chord } of matchedChords) {
+        for (const { rootNote, chordType } of matchedChords) {
             const listItem = document.createElement("li");
             const listItemContent = document.createElement("span");
-            listItemContent.textContent = `${root} ${chord?.name}`;
+            listItemContent.textContent = `${rootNote.name} ${chordType?.name}`;
             listItem.appendChild(listItemContent);
             matchedChordsListElement.appendChild(listItem);
         }

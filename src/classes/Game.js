@@ -1,4 +1,4 @@
-import { chords, notes } from "@benjamindehli/music-utils";
+import { chordTypes, notes } from "@benjamindehli/music-utils";
 
 export default class Game {
     constructor(level) {
@@ -13,7 +13,7 @@ export default class Game {
         for (let i = 0; i < numberOfRounds; i++) {
             const randomChordId = chordIds[Math.floor(Math.random() * chordIds.length)];
             const randomNote = notes[Math.floor(Math.random() * notes.length)];
-            const chordData = chords.find(chord => chord.name === randomChordId);
+            const chordData = chordTypes.find(chord => chord.name === randomChordId);
             rounds.push({
                 chord: {
                     name: randomNote.name + " " + randomChordId,
