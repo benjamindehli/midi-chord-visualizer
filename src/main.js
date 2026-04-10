@@ -38,10 +38,17 @@ function updateActiveNotesDisplay() {
     const matchedChordsListElement = document.getElementById("matched-chords-list");
     if (matchedChordsListElement) {
         matchedChordsListElement.innerHTML = "";
-        for (const { rootNote, chordType } of matchedChords) {
+        for (const matchedChord of matchedChords) {
+            const { chord, matchType } = matchedChord;
+            const { rootNote, chordType } = chord || {};
+
             const listItem = document.createElement("li");
             const listItemContent = document.createElement("span");
-            listItemContent.textContent = `${rootNote.name} ${chordType?.name}`;
+            if (matchType === "slashChord") {
+                listItemContent.textContent = `${rootNote?.name} ${chordType?.name} / ${chord.bassNote?.name}`;
+            } else {
+                listItemContent.textContent = `${rootNote?.name} ${chordType?.name}`;
+            }
             listItem.appendChild(listItemContent);
             matchedChordsListElement.appendChild(listItem);
         }
