@@ -5,10 +5,10 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@benjamindehli/music-utils@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@benjamindehli/music-utils@npm:4.1.0"
-  checksum: 10c0/f02479ed56fbc8c9bbe975ecbf60e3febf00352e2363e78bcfbfb20627714668292f035cee6a35dd0166ee9fe4b3c9901a2a79d6ff7dffe57719d9800829baa5
+"@benjamindehli/music-utils@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@benjamindehli/music-utils@npm:4.1.1"
+  checksum: 10c0/a357b15551a34300752d1f7287a783eee2fef93ffd815cfdebaa93cebe2277c78b861d4d0b0ae7f75baf5be10d136a083fc3fc6e2ac3fb4efc8623f8de681507
   languageName: node
   linkType: hard
 
@@ -1168,11 +1168,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.10.12":
-  version: 2.10.17
-  resolution: "baseline-browser-mapping@npm:2.10.17"
+  version: 2.10.18
+  resolution: "baseline-browser-mapping@npm:2.10.18"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c0/e792a92a6b206521681e3ab3a72770023f74a3274450bfe11ba55a075ba26f5820d5d2d02d92e25224b8d01e327b78fbf3e116bdc6ac74b3d9c52f5e3f4a048a
+  checksum: 10c0/cab0138dd70b3aefe83e27cd03013bfdea772d2329e6458178cceed34b7e3fde72b697c9e4c21fb3c796bcfb831d348bc947b017d8b64417045a34bf014c87b7
   languageName: node
   linkType: hard
 
@@ -1940,9 +1940,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.328":
-  version: 1.5.334
-  resolution: "electron-to-chromium@npm:1.5.334"
-  checksum: 10c0/4fa700f920d6f6a52f1a777f9cbbaf95ed7247fd6d89d9ff5d26255779c2c0297be5162e56e8e9a7ec40ff42d656d5e1b06ee6e7cf60dd8baec2e0d8f0f1bc77
+  version: 1.5.335
+  resolution: "electron-to-chromium@npm:1.5.335"
+  checksum: 10c0/ce634af91fba9ac647b5660bacdf08c6cec49743281733ae1c754487fafdb6299968e386434f1b749d09d5fd5a977c66d5cd2335a9dd2837ab10dc5b4c2545ac
   languageName: node
   linkType: hard
 
@@ -3011,7 +3011,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "midi-chord-visualizer@workspace:."
   dependencies:
-    "@benjamindehli/music-utils": "npm:^4.1.0"
+    "@benjamindehli/music-utils": "npm:^4.1.1"
     css-loader: "npm:^7.1.4"
     css-minimizer-webpack-plugin: "npm:^8.0.0"
     html-webpack-plugin: "npm:^5.6.6"

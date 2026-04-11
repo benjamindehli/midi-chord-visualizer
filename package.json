@@ -22,6 +22,6 @@
         "webpack-dev-server": "^5.2.3"
     },
     "dependencies": {
-        "@benjamindehli/music-utils": "^4.1.0"
+        "@benjamindehli/music-utils": "^4.1.1"
     }
 }
